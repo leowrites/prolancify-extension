@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Prolancify",
+  "description": "Triple your income today by supercharging your upwork game with AI.",
+  "version": "1.0",
+  "icons": {
+    "16": "image.png",
+    "32": "image.png",
+    "48": "image.png",
+    "128": "image.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["https://www.upwork.com/*", "<all_urls>"]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["index.css"],
+      "resources": ["image.png", "index.css"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
